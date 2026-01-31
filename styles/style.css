@@ -216,12 +216,32 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+}
+
+.sociedad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 4px;
+  margin-bottom: 20px;
+  border-top: 3px solid var(--rose-main);
+  border-bottom: 3px solid var(--rose-main);
+  width: 106%;
+  padding: 10px;
+}
+
+.sub{
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+  margin-top: -2px;
+  letter-spacing: 3px;
 }
 
 .info-primary h1 {
   margin: 0;
-  font-size: 3rem;
+  font-size: 2rem;
   font-family: var(--font-subtitulos);
   font-weight: 400;
   text-align: center;
@@ -230,89 +250,90 @@
 
 .info-primary p {
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-bottom: 10px;
+  font-weight: lighter;
+  line-height: 1.5rem;
 }
 
-.info-secundary {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.info-secundary ul {
-  margin: 0;
-}
-
-.info-content {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  gap: 0.4rem;
-}
-
-.info-content b {
-  color: var(--bg-color-4);
-  font-size: 1.2rem;
-}
-
-.section-date {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.date-info {
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.date-info img {
-  display: block;
+.padres{
   margin: 0 auto;
-}
-
-.date-text {
+  margin-top: -10px;
   text-align: center;
-  width: 90%;
-  font-size: 1.1rem;
+  line-height: 1.7rem;
+  font-size: 1.3rem;
+  font-family: var(--font-titulos);
 }
 
-.date-box {
+.frase-p, .fecha{
+  text-transform: uppercase;
+  letter-spacing: 3px;
   text-align: center;
-  margin-bottom: 25px;
+  font-size: 1rem;
+  font-weight: 400;
 }
 
-.date-box h2 {
-  margin-bottom: 10px;
-  font-size: 1.8rem;
-  color: var(--bg-color-4);
-}
-
-.date-box ul {
-  display: flex;
+.frase-l h1{
+  font-family: var(--font-titulos);
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
   margin: 0;
-  justify-content: center;
+
+  
 }
 
-.date-box ul li {
-  padding: 0 1rem;
-  font-size: 1.4rem;
+.frase-l p{
+  font-family: var(--font-titulos);
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 400;
 }
 
-.date-box ul li:nth-child(1) {
-  border-right: 1px solid var(--txt-body);
+.nombre h2{
+  font-family: var(--font-subtitulos);
+  font-size: 3rem;
+  text-align: center;
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: 5px;
+  margin-top: -10px;
 }
 
-.date-box ul li:nth-child(2) {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--bg-color-4);
+.dia {
+  font-family: var(--font-titulos);
+  font-size: 1.6rem;
+  text-align: center;
+  margin: 0;
+  font-weight: 400;
+  text-transform: uppercase;
+
 }
 
-.date-box ul li:nth-child(3) {
-  border-left: 1px solid var(--txt-body);
+.date-box h1{
+  font-family: var(--font-subtitulos);
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 0;
+  font-weight: 400;
 }
+
+.hora{
+   font-family: var(--font-titulos);
+  text-align: center;
+  margin: 0;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  margin-top: -10px;
+}
+
+
+
+
+
 
 /* -----------------------
         DATE TIME
