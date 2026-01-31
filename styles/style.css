@@ -1,3 +1,140 @@
+.envelope-screen {
+  position: fixed;
+  inset: 0;
+  background-image: url("../assets/img/1\ \(7\).jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.envelope {
+  position: relative;
+  width: calc(100% - 25px);
+  height: 220px;
+
+  border: 2px solid transparent;
+  background-image: url("../assets/img/sobre2.png");
+  background-size: cover;
+  background-position: bottom;
+  border-radius: 10px;
+
+  /* borde dorado principal */
+  border: 1px solid #c9a44c;
+
+  /* brillo metálico */
+  box-shadow: 0 30px 100px rgb(0, 0, 0);
+}
+
+.envelope::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border-radius: 10px;
+
+  border: 2px solid rgba(201, 164, 76, 0.7);
+
+  pointer-events: none;
+}
+
+.envelope::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../assets/img/corner-gold.png");
+  background-size: cover;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  clip-path: polygon(0 0, 100% 0, 50% 50%);
+  transform-origin: top;
+  transition: transform 1s ease;
+  z-index: 3;
+}
+
+.envelope-flap::after {
+  content: "";
+  position: absolute;
+  inset: 0px;
+
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+  clip-path: polygon(0 0, 100% 0, 50% 50%);
+
+  background: url("../assets/img/sobre.png");
+  background-position: center;
+  background-size: cover;
+
+  z-index: 3;
+}
+
+.envelope-flap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  width: calc(100% - 10px);
+  top: 10px;
+  left: 5px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+  background-color: rgb(0, 0, 0);
+  clip-path: polygon(0 0, 100% 0, 50% 50%);
+  z-index: -1;
+}
+
+.wax-seal {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+
+  background: url("../assets/img/sello.png");
+  background-position: center;
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  z-index: 4;
+}
+
+.envelope.open .envelope-flap {
+  transform: rotateX(180deg);
+}
+
+.envelope-screen.fade-out {
+  animation: fadeOut 1.5s ease forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
 /* -----------------------
           SECTION 1
   --------------------------*/
@@ -216,7 +353,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 .sociedad {
@@ -231,7 +367,7 @@
   padding: 10px;
 }
 
-.sub{
+.sub {
   font-size: 1rem;
   font-weight: 400;
   margin: 0;
@@ -256,7 +392,7 @@
   line-height: 1.5rem;
 }
 
-.padres{
+.padres {
   margin: 0 auto;
   margin-top: -10px;
   text-align: center;
@@ -265,7 +401,8 @@
   font-family: var(--font-titulos);
 }
 
-.frase-p, .fecha{
+.frase-p,
+.fecha {
   text-transform: uppercase;
   letter-spacing: 3px;
   text-align: center;
@@ -273,18 +410,16 @@
   font-weight: 400;
 }
 
-.frase-l h1{
+.frase-l h1 {
   font-family: var(--font-titulos);
   text-transform: uppercase;
   text-align: center;
   font-size: 1.5rem;
   font-weight: 600;
   margin: 0;
-
-  
 }
 
-.frase-l p{
+.frase-l p {
   font-family: var(--font-titulos);
   text-transform: uppercase;
   text-align: center;
@@ -292,7 +427,7 @@
   font-weight: 400;
 }
 
-.nombre h2{
+.nombre h2 {
   font-family: var(--font-subtitulos);
   font-size: 3rem;
   text-align: center;
@@ -309,10 +444,9 @@
   margin: 0;
   font-weight: 400;
   text-transform: uppercase;
-
 }
 
-.date-box h1{
+.date-box h1 {
   font-family: var(--font-subtitulos);
   font-size: 2.5rem;
   text-align: center;
@@ -320,8 +454,8 @@
   font-weight: 400;
 }
 
-.hora{
-   font-family: var(--font-titulos);
+.hora {
+  font-family: var(--font-titulos);
   text-align: center;
   margin: 0;
   font-weight: 400;
@@ -329,11 +463,6 @@
   font-size: 1.5rem;
   margin-top: -10px;
 }
-
-
-
-
-
 
 /* -----------------------
         DATE TIME
@@ -443,7 +572,9 @@
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12); /* sombra elegante */
   position: relative;
 
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .box-place:hover {
@@ -493,7 +624,9 @@
   border-radius: 12px;
 
   align-self: center;
-  transition: background 0.3s, transform 0.3s;
+  transition:
+    background 0.3s,
+    transform 0.3s;
 }
 
 .place-btn:hover {
@@ -527,7 +660,9 @@
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12); /* sombra elegante */
   position: relative;
 
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 .box-place-salon:hover {
   transform: translateY(-5px);
@@ -660,16 +795,20 @@
   border: 1px solid rgba(165, 124, 44, 0.6);
 
   background: var(--gold-gradient);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4),
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.4),
     0 12px 30px rgba(0, 0, 0, 0.25);
 
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .confirmar:hover {
   transform: translateY(-3px);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.6),
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.6),
     0 18px 40px rgba(0, 0, 0, 0.35);
 }
 

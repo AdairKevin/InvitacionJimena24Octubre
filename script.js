@@ -33,10 +33,10 @@ let countDown = new Date("Oct 24, 2026 17:00:00").getTime(),
   }, second);
 
 if (segundos == 0) {
-  (document.getElementById("dias").innerText = "00"),
+  ((document.getElementById("dias").innerText = "00"),
     (document.getElementById("horas").innerText = "00"),
     (document.getElementById("minutos").innerText = "00"),
-    (document.getElementById("segundos").innerText = "00");
+    (document.getElementById("segundos").innerText = "00"));
 }
 
 const audio = document.getElementById("audioPlayer");
@@ -61,4 +61,18 @@ audio.addEventListener("timeupdate", () => {
 audio.addEventListener("ended", () => {
   playPauseBtn.textContent = "▶";
   progressBar.style.width = "0%";
+});
+
+const openBtn = document.getElementById("openEnvelope");
+const envelope = document.querySelector(".envelope");
+const screen = document.getElementById("envelopeScreen");
+const invitation = document.getElementById("invitationContent");
+
+openBtn.addEventListener("click", () => {
+  envelope.classList.add("open");
+
+  setTimeout(() => {
+    screen.classList.add("fade-out");
+    invitation.classList.remove("hidden");
+  }, 1200);
 });
