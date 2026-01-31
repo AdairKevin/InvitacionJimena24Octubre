@@ -4,6 +4,8 @@
   background-image: url("../assets/img/1\ \(7\).jpg");
   background-size: cover;
   background-position: center;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
