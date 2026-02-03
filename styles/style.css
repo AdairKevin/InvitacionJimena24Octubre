@@ -950,3 +950,36 @@ footer a:hover {
   filter: blur(25px);
   z-index: 0;
 }
+
+.palabras {
+  margin: 0 auto;
+  font-family: var(--font-texto);
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: justify;
+  color: var(--txt-body);
+  margin-bottom: 30px;
+
+  width: calc(100% - 30px);
+  background-color: var(--rose-light);
+  border-radius: 5px;
+  border: 2px solid var(--rose-main);
+
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.338); /* sombra elegante */
+}
+
+.palabras p {
+  padding: 10px 15px;
+}
+
+.palabras small {
+  display: block;
+  text-align: right;
+  margin: 0 15px 10px 0;
+  font-size: 0.9rem;
+  color: var(--gray-pearl);
+}
+
+.palabras b {
+  color: var(--rose);
+}
